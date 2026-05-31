@@ -30,7 +30,7 @@ export default function WaitlistPage() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nRole: ${role || "not specified"}\nTools interested in: ${toolList}\n\n---\nSent from taracapital.in waitlist form`
     )
-    window.location.href = `mailto:hello@taracapital.in?subject=${subject}&body=${body}`
+    window.location.href = `mailto:saipavansaahu1008@gmail.com?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
@@ -209,7 +209,7 @@ export default function WaitlistPage() {
             </p>
             <p style={{ fontSize: 12, color: "#3a4050", marginBottom: 32 }}>
               If the email didn&apos;t open, write directly to{" "}
-              <a href="mailto:hello@taracapital.in" style={{ color: "#f0a500", textDecoration: "none" }}>hello@taracapital.in</a>
+              <a href="mailto:saipavansaahu1008@gmail.com" style={{ color: "#f0a500", textDecoration: "none" }}>saipavansaahu1008@gmail.com</a>
             </p>
             <Link href="/" style={{ fontSize: 11, color: "#6b7585", textDecoration: "none", letterSpacing: "1px", textTransform: "uppercase", border: "0.5px solid #252530", padding: "10px 20px", borderRadius: 2 }}>
               ← BACK TO HOME
