@@ -1,26 +1,217 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-jetbrains);
+  --font-mono: var(--font-jetbrains);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: #080809;
+  --color-foreground: #c9c5b8;
+  --color-surface: #0d0d10;
+  --color-surface-2: #111116;
+  --color-surface-3: #14141a;
+  --color-border: #1c1c24;
+  --color-border-2: #252530;
+  --color-dim: #4a5060;
+  --color-muted: #2e3040;
+
+  --color-axiom: #f0a500;
+  --color-axiom-dim: #2e2200;
+  --color-lens: #3a8fff;
+  --color-lens-dim: #0d2a55;
+  --color-pendulum: #14b8a6;
+  --color-pendulum-dim: #0d3330;
+
+  --color-green: #1db954;
+  --color-green-dim: #0a2e1a;
+  --color-red: #e84040;
+  --color-red-dim: #2e0a0a;
+  --color-amber: #f0a500;
+  --color-amber-dim: #2e2200;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #080809;
+  color: #c9c5b8;
+  font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #3a8fff33;
+  color: #c9c5b8;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d10;
+}
+::-webkit-scrollbar-thumb {
+  background: #252530;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5060;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.btn-axiom {
+  background: #2e220066;
+  border: 0.5px solid #f0a500;
+  color: #f0a500;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  border-radius: 2px;
+  padding: 10px 22px;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-axiom:hover {
+  background: #f0a500;
+  color: #080809;
+}
+
+.btn-lens {
+  background: #0d2a5566;
+  border: 0.5px solid #3a8fff;
+  color: #3a8fff;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  border-radius: 2px;
+  padding: 10px 22px;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-lens:hover {
+  background: #3a8fff;
+  color: #080809;
+}
+
+.btn-pendulum {
+  background: #0d333066;
+  border: 0.5px solid #14b8a6;
+  color: #14b8a6;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  border-radius: 2px;
+  padding: 10px 22px;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-pendulum:hover {
+  background: #14b8a6;
+  color: #080809;
+}
+
+.btn-primary {
+  background: #2e220066;
+  border: 0.5px solid #f0a500;
+  color: #f0a500;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  border-radius: 2px;
+  padding: 11px 30px;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: #f0a500;
+  color: #080809;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 0.5px solid #252530;
+  color: #6b7585;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  border-radius: 2px;
+  padding: 11px 30px;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  border-color: #c9c5b8;
+  color: #c9c5b8;
+}
+
+.tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #6b7585;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.card {
+  background: #0d0d10;
+  border: 0.5px solid #1c1c24;
+  border-radius: 2px;
+  padding: 24px;
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: #252530;
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid #1c1c24;
+  margin: 0;
+}
+
+.terminal-block {
+  background: #0d0d10;
+  border: 0.5px solid #1c1c24;
+  border-radius: 2px;
+  padding: 20px;
+  font-family: var(--font-jetbrains), monospace;
 }
