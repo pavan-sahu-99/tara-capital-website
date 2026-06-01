@@ -37,7 +37,7 @@ export default function WaitlistPage() {
       : "Not specified"
 
     try {
-      await fetch("https://formspree.io/f/placeholder", {
+      await fetch("https://formspree.io/f/xjgzqydr", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ name, email, phone, role, tools: toolList }),
