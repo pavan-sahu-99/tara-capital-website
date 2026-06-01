@@ -172,7 +172,7 @@ export default function PreviewPage() {
               sym: "◎", name: "TARA LENS", tag: "EQUITY RESEARCH",
               color: "#3a8fff", href: "/products/tara-lens",
               desc: "Beneish M-Score. Piotroski F-Score. HRP Optimizer. HMM Regime. The quant research stack that Indian retail investors have never had access to.",
-              price: "₹299", priceNote: "/mo — founding rate",
+              price: "₹499", priceNote: "/mo — founding rate (₹999 regular)",
               stats: [{ label: "Stocks screened", val: "2,000+" }, { label: "Forensic models", val: "3 active" }],
             },
             {
@@ -297,7 +297,7 @@ export default function PreviewPage() {
               <br />member waitlist.
             </h2>
             <p style={{ fontSize: 13, color: "#6b7090", lineHeight: 1.8, marginBottom: 28 }}>
-              First 100 users per tool get founding member pricing — locked for life. Axiom Analyst at ₹599/mo. Tara Lens Pro at ₹299/mo.
+              First 100 users per tool get founding member pricing — locked for life. Axiom Analyst at ₹599/mo. Tara Lens Pro at ₹499/mo.
             </p>
             <Link
               href="/waitlist"
