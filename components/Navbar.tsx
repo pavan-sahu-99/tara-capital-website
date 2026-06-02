@@ -58,11 +58,20 @@ export default function Navbar() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 8,
+            gap: 10,
             textDecoration: "none",
           }}
         >
-          <span style={{ color: "#f0a500", fontSize: 14, fontWeight: 700 }}>◈</span>
+          <img
+            src="/logo.png"
+            alt="Tara Capitals"
+            style={{
+              height: 32,
+              width: "auto",
+              objectFit: "contain",
+              imageRendering: "crisp-edges",
+            }}
+          />
           <span
             style={{
               color: "#c9c5b8",
