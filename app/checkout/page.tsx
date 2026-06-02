@@ -121,7 +121,7 @@ export default function CheckoutPage() {
   }
 
   const selectedTool = tools.find(t => t.id === formData.tool);
-  const currentPrice = selectedTool?.price[formData.plan as 'monthly' | 'annual' | 'founding'];
+  const currentPrice = selectedTool?.price[formData.plan as 'starter' | 'monthly' | 'annual' | 'founding_monthly'];
 
   return (
     <>
@@ -171,13 +171,35 @@ export default function CheckoutPage() {
 
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-300">Billing Cycle</label>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, plan: 'starter' })}
+                    className={`py-3 rounded-lg border text-sm font-semibold transition-all ${
+                      formData.plan === 'starter'
+                        ? 'border-[#1db954] bg-[#1db954]/10 text-[#1db954]'
+                        : 'border-[#374151] bg-[#1f2937] text-gray-400 hover:bg-[#374151]'
+                    }`}
+                  >
+                    Starter ₹100
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, plan: 'founding_monthly' })}
+                    className={`py-3 rounded-lg border text-sm font-semibold transition-all ${
+                      formData.plan === 'founding_monthly'
+                        ? 'border-[#f0a500] bg-[#f0a500]/10 text-[#f0a500]'
+                        : 'border-[#374151] bg-[#1f2937] text-gray-400 hover:bg-[#374151]'
+                    }`}
+                  >
+                    Founding
+                  </button>
                   <button
                     type="button"
                     onClick={() => setFormData({ ...formData, plan: 'monthly' })}
                     className={`py-3 rounded-lg border text-sm font-semibold transition-all ${
-                      formData.plan === 'monthly' 
-                        ? 'border-[#38bdf8] bg-[#38bdf8]/10 text-[#38bdf8]' 
+                      formData.plan === 'monthly'
+                        ? 'border-[#38bdf8] bg-[#38bdf8]/10 text-[#38bdf8]'
                         : 'border-[#374151] bg-[#1f2937] text-gray-400 hover:bg-[#374151]'
                     }`}
                   >
@@ -187,23 +209,12 @@ export default function CheckoutPage() {
                     type="button"
                     onClick={() => setFormData({ ...formData, plan: 'annual' })}
                     className={`py-3 rounded-lg border text-sm font-semibold transition-all ${
-                      formData.plan === 'annual' 
-                        ? 'border-[#38bdf8] bg-[#38bdf8]/10 text-[#38bdf8]' 
+                      formData.plan === 'annual'
+                        ? 'border-[#38bdf8] bg-[#38bdf8]/10 text-[#38bdf8]'
                         : 'border-[#374151] bg-[#1f2937] text-gray-400 hover:bg-[#374151]'
                     }`}
                   >
                     Annual
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, plan: 'founding' })}
-                    className={`py-3 rounded-lg border text-sm font-semibold transition-all ${
-                      formData.plan === 'founding' 
-                        ? 'border-[#f0a500] bg-[#f0a500]/10 text-[#f0a500]' 
-                        : 'border-[#374151] bg-[#1f2937] text-gray-400 hover:bg-[#374151]'
-                    }`}
-                  >
-                    Founding
                   </button>
                 </div>
               </div>
