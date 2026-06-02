@@ -122,10 +122,11 @@ const tools = [
   {
     symbol: "◉",
     name: "TARA PENDULUM",
-    tag: "SWING ANALYTICS",
-    color: "#14b8a6",
-    colorDim: "#0d333033",
+    tag: "SWING ANALYTICS — COMING SOON",
+    color: "#3a4050",
+    colorDim: "#0d0d1033",
     href: "/products/tara-pendulum",
+    comingSoon: true,
     tiers: [
       {
         name: "OBSERVER",
@@ -255,8 +256,11 @@ export default function PricingPage() {
                     ))}
                   </div>
 
-                  <a href="/waitlist" style={{ background: tier.highlight ? `${tool.color}22` : "transparent", border: `0.5px solid ${tier.highlight ? tool.color : "#252530"}`, color: tier.highlight ? tool.color : "#6b7585", fontSize: 10, letterSpacing: "1.5px", textTransform: "uppercase", padding: "9px 14px", borderRadius: 2, textDecoration: "none", textAlign: "center", display: "block" }}>
-                    {tier.monthly === "₹0" ? "START FREE" : "GET ACCESS"} →
+                  <a
+                    href={"comingSoon" in tool ? "/waitlist" : tier.monthly === "₹0" ? "/waitlist" : "/checkout"}
+                    style={{ background: tier.highlight ? `${tool.color}22` : "transparent", border: `0.5px solid ${tier.highlight ? tool.color : "#252530"}`, color: tier.highlight ? tool.color : "#6b7585", fontSize: 10, letterSpacing: "1.5px", textTransform: "uppercase", padding: "9px 14px", borderRadius: 2, textDecoration: "none", textAlign: "center", display: "block" }}
+                  >
+                    {"comingSoon" in tool ? "NOTIFY ME" : tier.monthly === "₹0" ? "START FREE" : "GET ACCESS"} →
                   </a>
                 </div>
               ))}
