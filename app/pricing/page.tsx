@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Pricing — Tara Capital",
+  title: "Pricing — Tara Capitals",
   description:
     "Per-tool and bundle pricing for Axiom Terminal, Tara Lens, and Tara Pendulum. Founding member rates for early access.",
 }
@@ -276,7 +276,7 @@ export default function PricingPage() {
         <span className="section-label">COMMON QUESTIONS</span>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 1, background: "#1c1c24", border: "0.5px solid #1c1c24", borderRadius: 2, overflow: "hidden" }}>
           {[
-            { q: "Is this financial advice?", a: "No. Tara Capital is a data research platform. All tools provide quantitative analysis and screening. All investment decisions remain yours. We are not SEBI-registered investment advisors." },
+            { q: "Is this financial advice?", a: "No. Tara Capitals is a data research platform. All tools provide quantitative analysis and screening. All investment decisions remain yours. We are not SEBI-registered investment advisors." },
             { q: "What data sources do you use?", a: "NSE official data feeds for OI and options data. Public financial data sources for fundamental screeners. All data is India-native — not a US tool retrofitted for India." },
             { q: "Is founding member pricing really locked?", a: "Yes. The first 100 users on each paid tier get that rate locked for life — as long as their subscription stays active. Cancel and resubscribe means standard rate." },
             { q: "Can I get a free trial?", a: "Each product has a free Observer/Explorer tier with no payment required. Paid tiers require early access approval — request access and we will onboard you." },

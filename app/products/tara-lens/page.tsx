@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Tara Lens — Equity Research Platform | Tara Capital",
+  title: "Tara Lens — Equity Research Platform | Tara Capitals",
   description:
     "Institutional quant analytics for Indian equity researchers. Beneish M-Score, HMM regime detection, HRP portfolio optimizer, sector RRG.",
 }

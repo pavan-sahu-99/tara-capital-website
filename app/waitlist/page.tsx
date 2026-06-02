@@ -51,7 +51,7 @@ export default function WaitlistPage() {
   }
 
   const whatsappMsg = encodeURIComponent(
-    `Hi, I'd like early access to Tara Capital tools.\n\nName: ${name}\nEmail: ${email}\nInterested in: ${selected.map(id => tools.find(t => t.id === id)?.label).join(", ") || "All tools"}`
+    `Hi, I'd like early access to Tara Capitals tools.\n\nName: ${name}\nEmail: ${email}\nInterested in: ${selected.map(id => tools.find(t => t.id === id)?.label).join(", ") || "All tools"}`
   )
 
   if (submitted) {

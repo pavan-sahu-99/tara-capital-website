@@ -101,7 +101,7 @@ const edges = [
   },
   {
     title: "Not for Beginners",
-    desc: "We serve researchers, not gamblers. Tara Capital assumes financial literacy. If you understand factor models and Greeks, you're home.",
+    desc: "We serve researchers, not gamblers. Tara Capitals assumes financial literacy. If you understand factor models and Greeks, you're home.",
     color: "#3a8fff",
   },
   {
@@ -130,7 +130,7 @@ export default function Home() {
         <div style={{ maxWidth: 800 }}>
           <div style={{ marginBottom: 24 }}>
             <span style={{ fontSize: 10, letterSpacing: "3px", textTransform: "uppercase", color: "#6b7585", padding: "4px 12px", border: "0.5px solid #1c1c24", borderRadius: 2 }}>
-              ● TARA CAPITAL // QUANT RESEARCH PLATFORM
+              ● TARA CAPITALS // QUANT RESEARCH PLATFORM
             </span>
           </div>
 
@@ -277,7 +277,7 @@ export default function Home() {
 
       <hr style={{ border: "none", borderTop: "0.5px solid #1c1c24" }} />
 
-      {/* Why Tara Capital */}
+      {/* Why Tara Capitals */}
       <section style={{ maxWidth: 1280, margin: "0 auto", padding: "64px 24px" }}>
         <div style={{ marginBottom: 48 }}>
           <span className="section-label">THE EDGE</span>

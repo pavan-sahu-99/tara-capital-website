@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Tara Pendulum — Swing Trading Intelligence | Tara Capital",
+  title: "Tara Pendulum — Swing Trading Intelligence | Tara Capitals",
   description:
     "Multi-timeframe swing trading intelligence for NSE equities and futures. Swing technicals, fundamentals overlay, mean reversion signals, futures setups.",
 }

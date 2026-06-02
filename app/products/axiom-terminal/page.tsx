@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Axiom Terminal — F&O Intelligence Platform | Tara Capital",
+  title: "Axiom Terminal — F&O Intelligence Platform | Tara Capitals",
   description:
     "Real-time OI spurts, F&O Greeks dashboard, sector OI rotation, option chain analysis. The Bloomberg Terminal for Indian F&O traders at 1% of the price.",
 }
@@ -143,7 +143,7 @@ export default function AxiomTerminalPage() {
               <span style={{ color: "#f0a500", fontSize: 20, fontWeight: 700 }}>◈</span>
               <div>
                 <span style={{ fontSize: 10, letterSpacing: "2.5px", textTransform: "uppercase", color: "#f0a500", display: "block" }}>AXIOM TERMINAL</span>
-                <span style={{ fontSize: 10, letterSpacing: "1.5px", textTransform: "uppercase", color: "#3a4050" }}>F&O INTELLIGENCE // BY TARA CAPITAL</span>
+                <span style={{ fontSize: 10, letterSpacing: "1.5px", textTransform: "uppercase", color: "#3a4050" }}>F&O INTELLIGENCE // BY TARA CAPITALS</span>
               </div>
             </div>
 

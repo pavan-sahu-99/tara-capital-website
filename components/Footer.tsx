@@ -208,7 +208,7 @@ export default function Footer() {
             >
               Data provided for research purposes only. Not SEBI-registered
               investment advice. Past performance does not guarantee future results.
-              Tara Capital is a research tool provider, not a financial advisor.
+              Tara Capitals is a research tool provider, not a financial advisor.
             </p>
           </div>
         </div>
@@ -232,7 +232,7 @@ export default function Footer() {
               textTransform: "uppercase",
             }}
           >
-            © 2025–2026 TARA CAPITAL // ALL RIGHTS RESERVED
+            © 2025–2026 TARA CAPITALS // ALL RIGHTS RESERVED
           </span>
           <span
             style={{

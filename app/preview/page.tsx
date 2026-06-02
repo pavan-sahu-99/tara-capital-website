@@ -23,7 +23,7 @@ export default function PreviewPage() {
         <div style={{ marginBottom: 32, display: "flex", alignItems: "center", gap: 16 }}>
           <div style={{ width: 32, height: 0.5, background: "#f0a500" }} />
           <span style={{ fontSize: 9, letterSpacing: "4px", textTransform: "uppercase", color: "#f0a500" }}>
-            TARA CAPITAL // QUANT RESEARCH
+            TARA CAPITALS // QUANT RESEARCH
           </span>
         </div>
 
