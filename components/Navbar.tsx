@@ -72,7 +72,7 @@ export default function Navbar() {
               textTransform: "uppercase",
             }}
           >
-            TARA CAPITAL
+            TARA CAPITALS
           </span>
         </Link>
 

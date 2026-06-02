@@ -11,7 +11,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Tara Capital — Quant Research Tools for Indian Markets",
+  title: "Tara Capitals — Quant Research Tools for Indian Markets",
   description:
     "Institutional-grade quantitative research tools for Indian equity and derivatives markets. Axiom Terminal, Tara Lens, Tara Pendulum.",
 }
