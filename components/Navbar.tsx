@@ -66,23 +66,11 @@ export default function Navbar() {
             src="/logo.png"
             alt="Tara Capitals"
             style={{
-              height: 32,
+              height: 36,
               width: "auto",
               objectFit: "contain",
-              imageRendering: "crisp-edges",
             }}
           />
-          <span
-            style={{
-              color: "#c9c5b8",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "4px",
-              textTransform: "uppercase",
-            }}
-          >
-            TARA CAPITALS
-          </span>
         </Link>
 
         {/* Desktop nav */}
