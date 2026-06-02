@@ -20,9 +20,9 @@ const products = [
   },
   {
     name: "Tara Pendulum",
-    tag: "Swing Analytics",
+    tag: "Coming Soon",
     href: "/products/tara-pendulum",
-    color: "#14b8a6",
+    color: "#3a4050",
     symbol: "◉",
   },
 ]

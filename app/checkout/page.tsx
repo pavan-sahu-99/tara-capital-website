@@ -27,9 +27,15 @@ export default function CheckoutPage() {
   const [success, setSuccess] = useState(false);
 
   const tools = [
-    { id: 'axiom_terminal', name: 'Axiom Terminal Analyst', color: '#f0a500', price: { monthly: 999, annual: 9999, founding: 599 } },
-    { id: 'tara_lens', name: 'Tara Lens Pro', color: '#3a8fff', price: { monthly: 999, annual: 9999, founding: 499 } },
-    { id: 'tara_pendulum', name: 'Tara Pendulum', color: '#14b8a6', price: { monthly: 499, annual: 4499, founding: 299 } },
+    { id: 'axiom_terminal', name: 'Axiom Terminal', color: '#f0a500', price: { starter: 100, monthly: 999, annual: 9999, founding_monthly: 599 } },
+    { id: 'tara_lens', name: 'Tara Lens', color: '#3a8fff', price: { starter: 100, monthly: 999, annual: 9999, founding_monthly: 499 } },
+  ];
+
+  const plans = [
+    { id: 'starter', label: 'Starter', desc: 'Basic access — try before you commit', badge: '₹100/mo' },
+    { id: 'founding_monthly', label: 'Founding Member', desc: 'Locked for life — first 100 users only', badge: 'Best Value' },
+    { id: 'monthly', label: 'Monthly', desc: 'Full access, cancel anytime', badge: '' },
+    { id: 'yearly', label: 'Annual', desc: '2 months free', badge: '16% off' },
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
