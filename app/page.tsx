@@ -58,7 +58,7 @@ const products = [
     symbol: "◉",
     name: "TARA PENDULUM",
     tag: "SWING ANALYTICS",
-    color: "#14b8a6",
+    color: "#3a4050",
     href: "/products/tara-pendulum",
     pitch: "Multi-timeframe swing intelligence for NSE equities and futures contracts.",
     features: [
@@ -69,9 +69,10 @@ const products = [
       "Multi-Chart Analysis Suite",
       "Sector Swing Scanner",
     ],
-    price: "From ₹499/mo",
-    annual: "₹4,499/year",
+    price: "Coming Soon",
+    annual: "",
     audience: "Swing & Positional Traders",
+    comingSoon: true,
   },
 ]
 
@@ -196,25 +197,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tara Pendulum snapshot */}
-          <div style={{ background: "#080809", padding: "22px 26px" }}>
+          {/* Tara Pendulum — Coming Soon */}
+          <div style={{ background: "#080809", padding: "22px 26px", position: "relative", opacity: 0.5 }}>
             <div style={{ marginBottom: 14 }}>
-              <span style={{ color: "#14b8a6", fontSize: 11, letterSpacing: "2px", textTransform: "uppercase" }}>◉ TARA PENDULUM</span>
-              <span style={{ color: "#3a4050", fontSize: 10, letterSpacing: "1px", marginLeft: 12 }}>SWING SCAN</span>
+              <span style={{ color: "#3a4050", fontSize: 11, letterSpacing: "2px", textTransform: "uppercase" }}>◉ TARA PENDULUM</span>
+              <span style={{ color: "#2a2a40", fontSize: 10, letterSpacing: "1px", marginLeft: 12 }}>SWING SCAN</span>
             </div>
-            <div style={{ borderTop: "0.5px solid #1c1c24", paddingTop: 14, display: "flex", flexDirection: "column", gap: 10 }}>
-              {[
-                { label: "SWING SETUPS (NSE)", value: "12 ACTIVE", color: "#14b8a6" },
-                { label: "REVERSION SIGNALS", value: "4 CANDIDATES", color: "#f0a500" },
-                { label: "FUTURES SETUPS", value: "3 HIGH-CONF.", color: "#1db954" },
-                { label: "AVG RISK-REWARD", value: "1 : 2.4 ▲", color: "#14b8a6" },
-                { label: "SECTOR MOMENTUM", value: "PHARMA LEADING", color: "#3a8fff" },
-              ].map((row, i) => (
-                <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span style={{ fontSize: 10, letterSpacing: "0.5px", textTransform: "uppercase", color: "#6b7585" }}>{row.label}</span>
-                  <span style={{ fontSize: 11, letterSpacing: "0.5px", color: row.color, fontWeight: 600 }}>{row.value}</span>
-                </div>
-              ))}
+            <div style={{ borderTop: "0.5px solid #1c1c24", paddingTop: 14, display: "flex", alignItems: "center", justifyContent: "center", height: 80 }}>
+              <span style={{ fontSize: 10, letterSpacing: "3px", textTransform: "uppercase", color: "#3a4050", border: "0.5px solid #252530", padding: "6px 16px", borderRadius: 2 }}>
+                ● COMING SOON
+              </span>
             </div>
           </div>
         </div>
@@ -263,9 +255,15 @@ export default function Home() {
                   <div style={{ fontSize: 10, color: "#3a4050", letterSpacing: "0.5px" }}>{p.annual}</div>
                   <div style={{ fontSize: 10, color: "#3a4050", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: 2 }}>{p.audience}</div>
                 </div>
-                <Link href={p.href} style={{ background: "transparent", border: `0.5px solid ${p.color}`, color: p.color, fontSize: 10, letterSpacing: "1.5px", textTransform: "uppercase", padding: "7px 16px", borderRadius: 2, textDecoration: "none" }}>
-                  EXPLORE →
-                </Link>
+                {"comingSoon" in p && p.comingSoon ? (
+                  <span style={{ background: "transparent", border: "0.5px solid #252530", color: "#3a4050", fontSize: 10, letterSpacing: "1.5px", textTransform: "uppercase", padding: "7px 16px", borderRadius: 2 }}>
+                    COMING SOON
+                  </span>
+                ) : (
+                  <Link href={p.href} style={{ background: "transparent", border: `0.5px solid ${p.color}`, color: p.color, fontSize: 10, letterSpacing: "1.5px", textTransform: "uppercase", padding: "7px 16px", borderRadius: 2, textDecoration: "none" }}>
+                    EXPLORE →
+                  </Link>
+                )}
               </div>
             </div>
           ))}
