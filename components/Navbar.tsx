@@ -188,22 +188,20 @@ export default function Navbar() {
           </Link>
 
           <a
-            href="/waitlist"
+            href="/checkout"
             style={{
-              background: "#2e220066",
-              border: "0.5px solid #f0a500",
-              color: "#f0a500",
-              fontSize: 8,
+              background: "#f0a500",
+              color: "#080809",
+              fontSize: 9,
+              fontWeight: 700,
               letterSpacing: "1.5px",
               textTransform: "uppercase",
-              padding: "6px 16px",
+              padding: "8px 18px",
               borderRadius: 2,
               textDecoration: "none",
-              transition: "all 0.15s ease",
             }}
-            className="hover:bg-[#f0a500] hover:text-[#080809] transition-all"
           >
-            REQUEST ACCESS
+            BUY NOW
           </a>
         </nav>
 

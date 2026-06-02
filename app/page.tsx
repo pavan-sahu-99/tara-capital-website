@@ -31,7 +31,8 @@ const products = [
       "Option Chain Analysis",
       "Signal Lab & Momentum Radar",
     ],
-    price: "From ₹999/mo",
+    price: "₹599/mo",
+    priceStrike: "₹999",
     annual: "₹9,999/year",
     audience: "Intraday F&O Traders",
   },
@@ -50,7 +51,8 @@ const products = [
       "4-Pillar Conviction Scoring",
       "Advanced Factor Screener — 2000+ stocks",
     ],
-    price: "From ₹499/mo",
+    price: "₹299/mo",
+    priceStrike: "₹499",
     annual: "₹4,499/year",
     audience: "Equity Researchers & RIAs",
   },
@@ -251,7 +253,10 @@ export default function Home() {
 
               <div style={{ borderTop: "0.5px solid #1c1c24", paddingTop: 18, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: p.color }}>{p.price}</div>
+                  {"priceStrike" in p && p.priceStrike && (
+                    <div style={{ fontSize: 10, color: "#3a4050", textDecoration: "line-through" }}>{p.priceStrike}/mo</div>
+                  )}
+                  <div style={{ fontSize: 13, fontWeight: 700, color: p.color }}>{p.price} <span style={{ fontSize: 9, color: "#f0a500", fontWeight: 400 }}>FOUNDING</span></div>
                   <div style={{ fontSize: 10, color: "#3a4050", letterSpacing: "0.5px" }}>{p.annual}</div>
                   <div style={{ fontSize: 10, color: "#3a4050", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: 2 }}>{p.audience}</div>
                 </div>
@@ -376,8 +381,10 @@ export default function Home() {
           Axiom Analyst: ₹599/mo (Regular ₹999) &nbsp;|&nbsp; Tara Lens Pro: ₹299/mo (Regular ₹499) &nbsp;|&nbsp; Pendulum: ₹299/mo (Regular ₹499)
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="/waitlist" className="btn-primary" style={{ textDecoration: "none" }}>REQUEST EARLY ACCESS →</a>
-          <Link href="/pricing" className="btn-ghost" style={{ textDecoration: "none" }}>VIEW FULL PRICING</Link>
+          <Link href="/checkout" style={{ background: "#f0a500", color: "#080809", fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", padding: "12px 28px", borderRadius: 2, textDecoration: "none" }}>
+            CLAIM FOUNDING PRICE →
+          </Link>
+          <Link href="/waitlist" className="btn-ghost" style={{ textDecoration: "none" }}>HAVE DOUBTS? LET&apos;S TALK</Link>
         </div>
         <p style={{ marginTop: 28, fontSize: 11, color: "#3a4050", letterSpacing: "0.3px" }}>
           Not financial advice. Data tools for research purposes only. Past performance does not guarantee future results.

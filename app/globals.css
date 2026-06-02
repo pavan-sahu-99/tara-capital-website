@@ -78,6 +78,10 @@ body {
   animation: marquee 30s linear infinite;
 }
 
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 .cursor-blink {
   animation: blink 1s step-end infinite;
 }
