@@ -131,19 +131,9 @@ export default function Footer() {
                 }}
               >
                 <span style={{ color: "#2e3040", fontSize: 8 }}>●</span>
-                Tara Chronicle
-                <span
-                  style={{
-                    fontSize: 6,
-                    letterSpacing: "1px",
-                    color: "#2e3040",
-                    border: "0.5px solid #2e3040",
-                    padding: "1px 4px",
-                    borderRadius: 2,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  SOON
+                Tara Pendulum
+                <span style={{ fontSize: 6, letterSpacing: "1px", color: "#2e3040", border: "0.5px solid #2e3040", padding: "1px 4px", borderRadius: 2, textTransform: "uppercase" }}>
+                  Q3 2026
                 </span>
               </span>
             </div>
@@ -178,18 +168,18 @@ export default function Footer() {
                 Pricing
               </Link>
               <a
-                href="mailto:hello@taracapital.in"
-                style={{
-                  color: "#4a5060",
-                  fontSize: 9,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                }}
+                href="mailto:hello@taracapitals.in"
+                style={{ color: "#4a5060", fontSize: 9, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }}
                 className="hover:text-[#c9c5b8] transition-colors"
               >
                 Contact
               </a>
+              <Link href="/terms" style={{ color: "#4a5060", fontSize: 9, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }} className="hover:text-[#c9c5b8] transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="/refund-policy" style={{ color: "#4a5060", fontSize: 9, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }} className="hover:text-[#c9c5b8] transition-colors">
+                Refund Policy
+              </Link>
             </div>
           </div>
 

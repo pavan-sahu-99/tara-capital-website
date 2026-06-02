@@ -105,8 +105,8 @@ const edges = [
     color: "#3a8fff",
   },
   {
-    title: "97% Gross Margin SaaS",
-    desc: "We reinvest margins into better data pipelines. No VC pressure. The product roadmap is driven by researchers, not investors.",
+    title: "No VC. No Noise.",
+    desc: "Bootstrapped and independent. No investor pressure to add irrelevant features. The roadmap is driven by researchers and traders — not funding rounds.",
     color: "#14b8a6",
   },
 ]
@@ -353,12 +353,12 @@ export default function Home() {
       <section style={{ background: "#0d0d10", padding: "48px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 1, background: "#1c1c24", border: "0.5px solid #1c1c24", borderRadius: 2, overflow: "hidden" }}>
           {[
-            { value: "45M+", label: "F&O Traders in India", color: "#f0a500" },
+            { value: "45M+", label: "Active NSE F&O accounts (NSE 2024)", color: "#f0a500" },
             { value: "₹500L Cr", label: "Daily NSE F&O Turnover", color: "#3a8fff" },
-            { value: "97%", label: "Gross Margin", color: "#14b8a6" },
+            { value: "₹0", label: "VC funding — roadmap driven by traders", color: "#14b8a6" },
             { value: "1,300+", label: "SEBI RIAs in India", color: "#f0a500" },
-            { value: "< ₹500", label: "Customer Acquisition Cost", color: "#3a8fff" },
-            { value: "24–36x", label: "LTV : CAC Ratio", color: "#14b8a6" },
+            { value: "3", label: "Forensic models — Beneish, F-Score, Z-Score", color: "#3a8fff" },
+            { value: "5", label: "Portfolio optimisation methods incl. HRP", color: "#14b8a6" },
           ].map((s, i) => (
             <div key={i} style={{ background: "#0d0d10", padding: "32px 24px", textAlign: "center" }}>
               <div style={{ fontSize: "clamp(20px, 2.5vw, 30px)", fontWeight: 700, color: s.color, letterSpacing: "2px", marginBottom: 10 }}>{s.value}</div>
