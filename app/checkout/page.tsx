@@ -43,7 +43,7 @@ export default function CheckoutPage() {
 
     try {
       // Create Order on Backend
-      const res = await fetch('http://34.180.4.101:8000/api/checkout/create', {
+      const res = await fetch('https://api.taracapitals.in/api/checkout/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
