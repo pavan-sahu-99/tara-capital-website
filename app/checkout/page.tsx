@@ -66,7 +66,7 @@ export default function CheckoutPage() {
         key: data.key_id,
         amount: data.amount,
         currency: 'INR',
-        name: 'Tara Capital',
+        name: 'Tara Capitals',
         description: `${formData.plan === 'monthly' ? 'Monthly' : formData.plan === 'annual' ? 'Annual' : 'Founding'} Subscription for ${tools.find(t => t.id === formData.tool)?.name}`,
         order_id: data.order_id,
         handler: function (response: any) {
@@ -132,7 +132,7 @@ export default function CheckoutPage() {
           {/* Left Column: Info */}
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl font-extrabold mb-4 text-white">Complete Your Checkout</h1>
-            <p className="text-gray-400 mb-8">Secure your premium access to Tara Capital's quantitative options suite.</p>
+            <p className="text-gray-400 mb-8">Secure your premium access to Tara Capitals' quantitative options suite.</p>
             
             <div className="bg-[#111827] border border-[#1f2937] rounded-xl p-6 relative overflow-hidden">
               <div 
