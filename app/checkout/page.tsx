@@ -48,8 +48,10 @@ export default function CheckoutPage() {
     setError('');
 
     try {
+      const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8504';
+
       // Create Order on Backend
-      const res = await fetch('https://api.taracapitals.in/api/checkout/create', {
+      const res = await fetch(`${API_BASE}/api/checkout/create`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -69,8 +71,26 @@ export default function CheckoutPage() {
         name: 'Tara Capitals',
         description: `${formData.plan === 'monthly' ? 'Monthly' : formData.plan === 'annual' ? 'Annual' : 'Founding'} Subscription for ${tools.find(t => t.id === formData.tool)?.name}`,
         order_id: data.order_id,
-        handler: function (response: any) {
-          // Razorpay handles success via Webhook, but we can show success to user
+        handler: async function (response: any) {
+          try {
+            const verifyRes = await fetch(`${API_BASE}/api/verify-payment`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                razorpay_order_id:   response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature:  response.razorpay_signature,
+              }),
+            });
+            if (!verifyRes.ok) {
+              const err = await verifyRes.json();
+              setError(err.detail || 'Payment verification failed.');
+              return;
+            }
+          } catch {
+            setError('Could not verify payment. Contact support.');
+            return;
+          }
           setSuccess(true);
         },
         prefill: {
