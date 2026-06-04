@@ -257,10 +257,15 @@ export default function PricingPage() {
                   </div>
 
                   <a
-                    href={"comingSoon" in tool ? "/waitlist" : tier.monthly === "₹0" ? "/waitlist" : "/checkout"}
+                    href={
+                      "comingSoon" in tool ? "/waitlist" :
+                      tier.monthly === "₹0" ? "/waitlist" :
+                      tier.name === "INSTITUTIONAL" ? "/waitlist?type=institutional" :
+                      `/checkout?tool=${tool.name.toLowerCase().replace(/\s+/g, "_")}&plan=${"foundingMonthly" in tier ? "founding_monthly" : "monthly"}`
+                    }
                     style={{ background: tier.highlight ? `${tool.color}22` : "transparent", border: `0.5px solid ${tier.highlight ? tool.color : "#252530"}`, color: tier.highlight ? tool.color : "#6b7585", fontSize: 10, letterSpacing: "1.5px", textTransform: "uppercase", padding: "9px 14px", borderRadius: 2, textDecoration: "none", textAlign: "center", display: "block" }}
                   >
-                    {"comingSoon" in tool ? "NOTIFY ME" : tier.monthly === "₹0" ? "START FREE" : "GET ACCESS"} →
+                    {"comingSoon" in tool ? "NOTIFY ME" : tier.monthly === "₹0" ? "START FREE" : tier.name === "INSTITUTIONAL" ? "ENQUIRE" : "GET ACCESS"} →
                   </a>
                 </div>
               ))}

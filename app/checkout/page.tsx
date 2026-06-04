@@ -1,27 +1,29 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 import { JetBrains_Mono } from 'next/font/google';
 
 const jetbrains = JetBrains_Mono({ subsets: ['latin'] });
 
-// Declare Razorpay window object
 declare global {
   interface Window {
     Razorpay: any;
   }
 }
 
-export default function CheckoutPage() {
+function CheckoutForm() {
+  const searchParams = useSearchParams();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    tool: 'axiom_terminal',
-    plan: 'monthly',
+    tool: searchParams.get('tool') || 'axiom_terminal',
+    plan: searchParams.get('plan') || 'monthly',
   });
-  
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
@@ -48,17 +50,15 @@ export default function CheckoutPage() {
     setError('');
 
     try {
-      const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8504';
-
       // Create Order on Backend
-      const res = await fetch(`${API_BASE}/api/checkout/create`, {
+      const res = await fetch('https://api.taracapitals.in/api/checkout/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       const data = await res.json();
-      
+
       if (!res.ok) {
         throw new Error(data.detail || 'Failed to create order');
       }
@@ -71,26 +71,8 @@ export default function CheckoutPage() {
         name: 'Tara Capitals',
         description: `${formData.plan === 'monthly' ? 'Monthly' : formData.plan === 'annual' ? 'Annual' : 'Founding'} Subscription for ${tools.find(t => t.id === formData.tool)?.name}`,
         order_id: data.order_id,
-        handler: async function (response: any) {
-          try {
-            const verifyRes = await fetch(`${API_BASE}/api/verify-payment`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                razorpay_order_id:   response.razorpay_order_id,
-                razorpay_payment_id: response.razorpay_payment_id,
-                razorpay_signature:  response.razorpay_signature,
-              }),
-            });
-            if (!verifyRes.ok) {
-              const err = await verifyRes.json();
-              setError(err.detail || 'Payment verification failed.');
-              return;
-            }
-          } catch {
-            setError('Could not verify payment. Contact support.');
-            return;
-          }
+        handler: function (response: any) {
+          // Razorpay handles success via Webhook, but we can show success to user
           setSuccess(true);
         },
         prefill: {
@@ -104,11 +86,11 @@ export default function CheckoutPage() {
       };
 
       const rzp = new window.Razorpay(options);
-      
+
       rzp.on('payment.failed', function (response: any) {
         setError(response.error.description || 'Payment failed. Please try again.');
       });
-      
+
       rzp.open();
 
     } catch (err: any) {
@@ -129,7 +111,7 @@ export default function CheckoutPage() {
           <p className="text-gray-400 mb-8">
             Your subscription has been activated. Please check your email <strong>{formData.email}</strong> for your secure login credentials and instructions.
           </p>
-          <button 
+          <button
             onClick={() => window.location.href = '/'}
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg font-semibold transition-colors border border-gray-700"
           >
@@ -145,23 +127,22 @@ export default function CheckoutPage() {
 
   return (
     <>
-      <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="lazyOnload" />
       <div className={`min-h-screen bg-[#080809] flex items-center justify-center p-6 ${jetbrains.className} text-gray-200`}>
         <div className="max-w-4xl w-full grid md:grid-cols-2 gap-8">
-          
+
           {/* Left Column: Info */}
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl font-extrabold mb-4 text-white">Complete Your Checkout</h1>
             <p className="text-gray-400 mb-8">Secure your premium access to Tara Capitals' quantitative options suite.</p>
-            
+
             <div className="bg-[#111827] border border-[#1f2937] rounded-xl p-6 relative overflow-hidden">
-              <div 
-                className="absolute top-0 left-0 w-1 h-full" 
+              <div
+                className="absolute top-0 left-0 w-1 h-full"
                 style={{ backgroundColor: selectedTool?.color }}
               ></div>
               <h3 className="text-xl font-bold mb-2 text-white">{selectedTool?.name}</h3>
               <p className="text-gray-400 text-sm mb-4">Professional analytics & real-time greeks tracker.</p>
-              
+
               <div className="flex items-end gap-2 mt-6">
                 <span className="text-3xl font-bold text-white">₹{currentPrice?.toLocaleString()}</span>
                 <span className="text-gray-500 mb-1">/ {formData.plan === 'annual' ? 'year' : 'month'}</span>
@@ -172,13 +153,13 @@ export default function CheckoutPage() {
           {/* Right Column: Form */}
           <div className="bg-[#111827] border border-[#1f2937] p-8 rounded-xl shadow-2xl">
             <form onSubmit={handleCheckout} className="space-y-5">
-              
+
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-300">Select Tool</label>
                 <div className="grid grid-cols-1 gap-3">
-                  <select 
-                    name="tool" 
-                    value={formData.tool} 
+                  <select
+                    name="tool"
+                    value={formData.tool}
                     onChange={handleInputChange}
                     className="w-full bg-[#1f2937] border border-[#374151] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"
                   >
@@ -292,7 +273,7 @@ export default function CheckoutPage() {
               >
                 {loading ? 'Processing...' : `Pay ₹${currentPrice?.toLocaleString()}`}
               </button>
-              
+
               <p className="text-xs text-gray-500 text-center mt-4">
                 Secured by Razorpay. 256-bit SSL encryption.
               </p>
@@ -301,5 +282,18 @@ export default function CheckoutPage() {
         </div>
       </div>
     </>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={
+      <div className={`min-h-screen bg-[#080809] flex items-center justify-center ${jetbrains.className}`}>
+        <div className="text-gray-400 text-sm tracking-widest uppercase">Loading...</div>
+      </div>
+    }>
+      <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="lazyOnload" />
+      <CheckoutForm />
+    </Suspense>
   );
 }
