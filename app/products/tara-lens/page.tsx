@@ -123,7 +123,7 @@ const pricingTiers = [
       "Unlimited watchlist",
     ],
     cta: "Get Pro Access",
-    ctaHref: "/waitlist",
+    ctaHref: "/checkout?tool=tara_lens&plan=founding_monthly",
     highlight: true,
     badge: "MOST POPULAR",
     note: "For the serious retail investor who wants more than just stock data.",
@@ -143,8 +143,8 @@ const pricingTiers = [
       "Priority support — 48-hour response SLA",
       "Tax-Aware Rebalancing — coming soon",
     ],
-    cta: "Get Institutional Access",
-    ctaHref: "/waitlist",
+    cta: "Contact for Institutional",
+    ctaHref: "mailto:hello@taracapital.in",
     highlight: false,
     badge: "FOR SEBI RIAS",
     note: "For SEBI Registered Investment Advisors, Smallcase managers, and professional analysts.",
@@ -188,8 +188,8 @@ export default function TaraLensPage() {
             </p>
 
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a href="/waitlist" className="btn-lens" style={{ textDecoration: "none" }}>
-                REQUEST ACCESS →
+              <a href="/checkout?tool=tara_lens&plan=founding_monthly" className="btn-lens" style={{ textDecoration: "none" }}>
+                BUY NOW →
               </a>
               <a href="#pricing" className="btn-ghost" style={{ textDecoration: "none" }}>
                 VIEW PRICING
@@ -449,7 +449,7 @@ export default function TaraLensPage() {
           Analytically superior to every Indian retail platform. The only question is: are you the researcher who uses it first?
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="/waitlist" className="btn-lens" style={{ textDecoration: "none" }}>REQUEST EARLY ACCESS →</a>
+          <a href="/checkout?tool=tara_lens&plan=founding_monthly" className="btn-lens" style={{ textDecoration: "none" }}>GET FOUNDING ACCESS →</a>
           <Link href="/pricing" className="btn-ghost" style={{ textDecoration: "none" }}>COMPARE ALL PRODUCTS</Link>
         </div>
       </section>

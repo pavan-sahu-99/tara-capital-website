@@ -86,7 +86,7 @@ const pricingTiers = [
       "Signal Lab and Momentum Radar",
     ],
     cta: "Get Analyst Access",
-    ctaHref: "/waitlist",
+    ctaHref: "/checkout?tool=axiom_terminal&plan=founding_monthly",
     highlight: true,
     badge: "MOST POPULAR",
   },
@@ -103,7 +103,7 @@ const pricingTiers = [
       "Priority support — 24 hour response",
     ],
     cta: "Get Pro Access",
-    ctaHref: "/waitlist",
+    ctaHref: "/checkout?tool=axiom_terminal&plan=monthly",
     highlight: false,
   },
   {
@@ -161,7 +161,7 @@ export default function AxiomTerminalPage() {
             </p>
 
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a href="/waitlist" className="btn-axiom" style={{ textDecoration: "none" }}>REQUEST ACCESS →</a>
+              <a href="/checkout?tool=axiom_terminal&plan=founding_monthly" className="btn-axiom" style={{ textDecoration: "none" }}>BUY NOW →</a>
               <a href="#pricing" className="btn-ghost" style={{ textDecoration: "none" }}>VIEW PRICING</a>
             </div>
 
@@ -361,7 +361,7 @@ export default function AxiomTerminalPage() {
           STOP TRADING BLIND. START TRADING WITH EDGE.
         </h3>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="/waitlist" className="btn-axiom" style={{ textDecoration: "none" }}>REQUEST EARLY ACCESS →</a>
+          <a href="/checkout?tool=axiom_terminal&plan=founding_monthly" className="btn-axiom" style={{ textDecoration: "none" }}>GET FOUNDING ACCESS →</a>
           <Link href="/pricing" className="btn-ghost" style={{ textDecoration: "none" }}>COMPARE ALL PRODUCTS</Link>
         </div>
       </section>
